@@ -26,3 +26,8 @@ Context on Projects:
 
 10) "Danny's Diner SQL Case Study.sql" - Danny's Dinner: This SQL project was taken from a website titled "8-Week SQL Challenge". I analyzed customer spending and behavior using a dataset of sales, menu items, and membership details. I created tables for sales, menu, and members, then inserted sample data to simulate restaurant transactions. Through ten SQL queries, I addressed key business questions: calculating total spending per customer, tracking visit frequency, identifying first and most popular purchases, and determining the overall most purchased item (ramen, 8 times). I also examined purchases before and after membership enrollment, computed pre-membership spending, and calculated loyalty points under two scenarios—standard points (1$ = 10 points, sushi 2x multiplier) and a promotional first-week 2x points for members A and B in January. Using joins, subqueries, window functions (RANK), and conditional logic (CASE), I derived actionable insights to enhance customer engagement and optimize operations at Danny’s Diner.
 
+
+
+## Medicare Skilled Nursing Facility Payment Analysis
+
+[View the project](./Medicare-SNF-Payment-Analysis) — Analyzed CMS public-use data from 2019–2023 using DuckDB SQL, pandas, Matplotlib, and seaborn. The project includes data-quality checks, a 2023 state comparison, a dual-eligible beneficiary analysis, and a five-year balanced panel of 13,497 providers.
