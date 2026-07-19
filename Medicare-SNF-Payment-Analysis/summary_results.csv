@@ -1,0 +1,21 @@
+"=== Summary Statistics for TOT_MDCR_STDZD_PYMT_AMT (2023, PROVIDER rows) ==="
+provider_count,mean_pymt,std_pymt,min_pymt,p25_pymt,median_pymt,p75_pymt,max_pymt
+14161,1846517.51,1925772.21,29875.0,679251.0,1257114.0,2316166.0,34389366.0
+
+=== Top 5 and Bottom 5 States by Mean TOT_MDCR_STDZD_PYMT_AMT ===
+STATE,provider_count,mean_pymt,category
+NY,590,4468203.15,Top 5
+NJ,340,3651966.85,Top 5
+MD,218,3472437.37,Top 5
+FL,692,3120982.67,Top 5
+NV,54,3120510.65,Top 5
+ME,78,985063.4,Bottom 5
+ND,59,979802.83,Bottom 5
+MN,301,934097.22,Bottom 5
+IA,375,680791.37,Bottom 5
+PR,5,168741.0,Bottom 5
+
+=== Dual-Eligible Comparison (BENE_DUAL_PCT >= 50% vs < 50%) ===
+dual_category,provider_count,mean_pymt,std_pymt
+High Dual (>= 50%),3951,1996815.81,1976113.1
+Low Dual (< 50%),6503,2342311.15,2097567.52
