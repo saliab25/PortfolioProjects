@@ -1,0 +1,70 @@
+{
+  "random_seed": 42,
+  "model_config": {
+    "random_seed": 42,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "calibration_fraction_within_train": 0.2,
+    "minimum_precision_target": 0.8,
+    "training_negative_to_positive_ratio": 50,
+    "lightgbm_candidates": [
+      {
+        "learning_rate": 0.05,
+        "num_leaves": 31,
+        "n_estimators": 300,
+        "min_child_samples": 100
+      },
+      {
+        "learning_rate": 0.03,
+        "num_leaves": 63,
+        "n_estimators": 500,
+        "min_child_samples": 200
+      }
+    ]
+  },
+  "policy_config": {
+    "review_capacity_per_day": 200,
+    "review_cost": 4.0,
+    "false_positive_friction_cost": 12.0,
+    "fraud_loss_rate": 1.0,
+    "fraud_recovery_rate_when_reviewed": 0.85,
+    "threshold_grid_size": 201
+  },
+  "champion_parameters": {
+    "learning_rate": 0.03,
+    "num_leaves": 63,
+    "n_estimators": 500,
+    "min_child_samples": 200
+  },
+  "bundle": {
+    "model_name": "lightgbm_2",
+    "feature_names": [
+      "type",
+      "step",
+      "hour_of_day",
+      "day_index",
+      "amount",
+      "log_amount",
+      "old_balance_orig",
+      "old_balance_dest",
+      "amount_to_orig_balance",
+      "amount_to_dest_balance",
+      "origin_balance_is_zero",
+      "destination_balance_is_zero",
+      "origin_has_insufficient_balance",
+      "destination_is_merchant"
+    ],
+    "probability_threshold": 0.995,
+    "review_capacity_per_day": 200,
+    "cost_assumptions": {
+      "review_capacity_per_day": 200,
+      "review_cost": 4.0,
+      "false_positive_friction_cost": 12.0,
+      "fraud_loss_rate": 1.0,
+      "fraud_recovery_rate_when_reviewed": 0.85
+    },
+    "train_end_step": 520,
+    "validation_end_step": 631,
+    "version": "1.0.0"
+  }
+}

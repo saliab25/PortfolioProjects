@@ -1,0 +1,4 @@
+model,validation_pr_auc,validation_policy_cost,selected_threshold,class_weight,learning_rate,num_leaves,n_estimators,min_child_samples
+lightgbm_2,1.0,235445942.11150002,0.995,,0.03,63.0,500.0,200.0
+lightgbm_1,0.9999999999999999,235445942.11150002,0.995,,0.05,31.0,300.0,100.0
+logistic_regression,0.7699579588136448,276454323.197,0.035,balanced,,,,

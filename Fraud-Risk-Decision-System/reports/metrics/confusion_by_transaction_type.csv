@@ -1,0 +1,6 @@
+segment,transactions,fraud,true_positives,false_positives,false_negatives,true_negatives,precision,recall
+PAYMENT,30062,0,0,0,0,30062,0.0,0.0
+CASH_OUT,29152,626,495,0,131,28526,1.0,0.7907348242811502
+CASH_IN,20713,0,0,0,0,20713,0.0,0.0
+TRANSFER,8827,626,505,0,121,8201,1.0,0.8067092651757188
+DEBIT,712,0,0,0,0,712,0.0,0.0

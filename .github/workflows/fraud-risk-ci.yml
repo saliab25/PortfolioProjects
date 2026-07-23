@@ -1,0 +1,53 @@
+name: Fraud risk CI
+
+on:
+  push:
+    paths:
+      - "Fraud-Risk-Decision-System/**"
+      - ".github/workflows/fraud-risk-ci.yml"
+  pull_request:
+    paths:
+      - "Fraud-Risk-Decision-System/**"
+      - ".github/workflows/fraud-risk-ci.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Fraud-Risk-Decision-System
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: fraud_risk
+          POSTGRES_USER: fraud_app
+          POSTGRES_PASSWORD: ci-only-password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U fraud_app -d fraud_risk"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      POSTGRES_DB: fraud_risk
+      POSTGRES_USER: fraud_app
+      POSTGRES_PASSWORD: ci-only-password
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: Fraud-Risk-Decision-System/pyproject.toml
+      - name: Install project
+        run: python -m pip install -e ".[dev,modeling]"
+      - name: Lint
+        run: ruff check .
+      - name: Validate PostgreSQL bootstrap
+        run: python scripts/bootstrap_database.py
+      - name: Test
+        run: pytest
