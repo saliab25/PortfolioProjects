@@ -31,3 +31,11 @@ Context on Projects:
 ## Medicare Skilled Nursing Facility Payment Analysis
 
 [View the project](./Medicare-SNF-Payment-Analysis) — Analyzed CMS public-use data from 2019–2023 using DuckDB SQL, pandas, Matplotlib, and seaborn. The project includes data-quality checks, a 2023 state comparison, a dual-eligible beneficiary analysis, and a five-year balanced panel of 13,497 providers.
+
+## Fraud and Risk Decision System
+
+[View the project](./Fraud-Risk-Decision-System)
+
+I built a fraud-review decision system using synthetic PaySim mobile-money transactions. I used PostgreSQL, Python, scikit-learn, LightGBM, calibration, cost-sensitive threshold selection, and a daily investigation-capacity constraint. The project includes a leakage audit, automated data checks, segment-level error analysis, SHAP explanations, monitoring metrics, tests, GitHub Actions, Docker, and a Streamlit interface.
+
+On the held-out chronological test period, the selected policy reviewed 1,000 of 89,466 transactions and captured 79.87% of simulated fraud under a 200-review-per-day limit. Because PaySim is synthetic and unusually separable, I treat these results as evidence of the workflow—not evidence that the model would perform similarly in production.
