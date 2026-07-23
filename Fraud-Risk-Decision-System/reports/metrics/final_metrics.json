@@ -1,0 +1,60 @@
+{
+  "champion": "lightgbm_2",
+  "split": {
+    "source_rows_loaded": 6362620,
+    "train_rows": 6082007,
+    "fit_rows_after_negative_sampling": 240057,
+    "calibration_rows": 91560,
+    "validation_rows": 191147,
+    "test_rows": 89466,
+    "train_end_step": 520,
+    "validation_end_step": 631,
+    "overall_fraud_rate": 0.001290820448180152,
+    "train_fraud_rate": 0.0009505086067806235,
+    "validation_fraud_rate": 0.006173259323975788,
+    "test_fraud_rate": 0.01399414302640109
+  },
+  "cost_assumptions": {
+    "review_capacity_per_day": 200,
+    "review_cost": 4.0,
+    "false_positive_friction_cost": 12.0,
+    "fraud_loss_rate": 1.0,
+    "fraud_recovery_rate_when_reviewed": 0.85
+  },
+  "validation_policy": {
+    "threshold": 0.995,
+    "total_cost": 235445942.11150002,
+    "loss_avoided": 1261834906.0785,
+    "net_benefit_vs_no_review": 1261831018.0785,
+    "reviewed": 972,
+    "true_positives": 972,
+    "false_positives": 0,
+    "false_negatives": 208,
+    "true_negatives": 189967,
+    "precision": 1.0,
+    "recall": 0.823728813559322,
+    "capacity_binding_days": 4
+  },
+  "test_probability_metrics": {
+    "pr_auc": 0.9993205812241811,
+    "roc_auc": 0.9999354423540604,
+    "brier_score": 1.1189381352356639e-05,
+    "expected_calibration_error": 1.327609410794033e-05,
+    "recall_at_precision_0.80": 0.9992012779552716,
+    "threshold_at_precision_0.80": 1.1051276925968979e-05
+  },
+  "test_policy": {
+    "threshold": 0.995,
+    "total_cost": 332705380.9910002,
+    "loss_avoided": 1797427294.2189999,
+    "net_benefit_vs_no_review": 1797423294.2189999,
+    "reviewed": 1000,
+    "true_positives": 1000,
+    "false_positives": 0,
+    "false_negatives": 252,
+    "true_negatives": 88214,
+    "precision": 1.0,
+    "recall": 0.7987220447284346,
+    "capacity_binding_days": 5
+  }
+}

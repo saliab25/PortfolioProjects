@@ -1,0 +1,43 @@
+# Secrets and local configuration
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.ruff_cache/
+.mypy_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Data and generated artifacts
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/raw/source_metadata.json
+!data/processed/.gitkeep
+!data/processed/quality_summary.json
+artifacts/*
+!artifacts/.gitkeep
+!artifacts/run_manifest.json
+
+# Local databases and logs
+*.duckdb
+*.db
+logs/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.agents/
+.codex/
+work/
+outputs/
+.DS_Store
+Thumbs.db

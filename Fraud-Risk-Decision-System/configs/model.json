@@ -1,0 +1,23 @@
+{
+  "random_seed": 42,
+  "train_fraction": 0.7,
+  "validation_fraction": 0.15,
+  "calibration_fraction_within_train": 0.2,
+  "minimum_precision_target": 0.8,
+  "training_negative_to_positive_ratio": 50,
+  "lightgbm_candidates": [
+    {
+      "learning_rate": 0.05,
+      "num_leaves": 31,
+      "n_estimators": 300,
+      "min_child_samples": 100
+    },
+    {
+      "learning_rate": 0.03,
+      "num_leaves": 63,
+      "n_estimators": 500,
+      "min_child_samples": 200
+    }
+  ]
+}
+

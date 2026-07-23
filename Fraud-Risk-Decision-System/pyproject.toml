@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools==75.6.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fraud-risk-decision-system"
+version = "0.1.0"
+description = "A cost- and capacity-aware fraud review decision system using synthetic PaySim data."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "joblib==1.4.2",
+    "numpy==2.1.3",
+    "pandas==2.2.3",
+    "psycopg[binary]==3.2.3",
+    "pyarrow==25.0.0",
+    "python-dotenv==1.0.1",
+    "scikit-learn==1.5.2",
+    "SQLAlchemy==2.0.36",
+    "tabulate==0.9.0",
+]
+
+[project.optional-dependencies]
+modeling = [
+    "lightgbm==4.5.0",
+    "shap==0.46.0",
+]
+notebooks = [
+    "ipykernel==6.29.5",
+    "jupyterlab==4.3.2",
+    "matplotlib==3.9.3",
+    "seaborn==0.13.2",
+]
+app = [
+    "plotly==5.24.1",
+    "streamlit==1.40.2",
+]
+data = [
+    "kagglehub==0.3.4",
+]
+dev = [
+    "pytest==8.3.4",
+    "pytest-cov==6.0.0",
+    "ruff==0.8.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q --cov=fraud_system --cov-fail-under=80"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

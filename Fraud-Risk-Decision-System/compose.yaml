@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-fraud_risk}
+      POSTGRES_USER: ${POSTGRES_USER:-fraud_app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copy .env.example to .env and set POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - fraud_postgres_data:/var/lib/postgresql/data
+      - ./sql/bootstrap:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  app:
+    profiles: ["app"]
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./artifacts:/app/artifacts:ro
+      - ./reports:/app/reports:ro
+
+volumes:
+  fraud_postgres_data:
